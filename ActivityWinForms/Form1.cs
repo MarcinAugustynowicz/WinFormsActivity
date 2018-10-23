@@ -13,11 +13,16 @@ namespace ActivityWinForms
     public partial class Form1 : Form
     {
         ActivityController cont;
+        IdleNotifier notifier;
+
         public Form1()
         {
             InitializeComponent();
-            cont = new ActivityController(this);
-            cont.UserActive += msg;
+            //cont = new ActivityController(this);
+            //cont.UserActive += msg;
+
+            notifier = new IdleNotifier(this, TimeSpan.FromSeconds(3));
+            notifier.Idle += msg;
         }
         public void msg(object sender,EventArgs e)
         {

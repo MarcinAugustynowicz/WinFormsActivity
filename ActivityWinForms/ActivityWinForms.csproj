@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="ActivityController.cs" />
     <Compile Include="ActivityControllerBase.cs" />
+    <Compile Include="IdleNotifier.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
