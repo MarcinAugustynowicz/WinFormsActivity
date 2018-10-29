@@ -54,11 +54,12 @@ namespace ActivityWinForms
         }
         void MouseTimerLoop(object sender, EventArgs e)
         {
-            //check if mouse position has changed, if so report activity and update mouse position
-            if (lastPos != Cursor.Position)
+            //check if mouse position has changed and mouse is over the form, if so report activity and update mouse position
+            if (lastPos != Cursor.Position&&form.RectangleToScreen(form.Bounds).Contains(form.PointToScreen(Cursor.Position)))
             {
                 ResetTimer();
             }
+            
             lastPos = Cursor.Position;
         }
         private void Form_Move(object sender, EventArgs e)
